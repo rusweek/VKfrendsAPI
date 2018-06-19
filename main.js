@@ -15,7 +15,7 @@ window.onload = function(e){
        
     }).then(function(){ return new Promise(function(resolve, reject){
        VK.Api.call('users.get', {v:'5.80', 'name_case': 'mon', fields: 'bdate'}, function(response){
-           console.log(response);
+           
            if(response.error){
                reject(new Error(response.error.error_msg))
            } else {
@@ -26,7 +26,22 @@ window.onload = function(e){
             }
            });
        });
-   });
+   }).then(function(){ return new Promise (function(resolve, reject){
+       VK.Api.call('friends.get', {v:'5.80', 'name_case': 'mon', fields: 'bdate, photo_200_orig'}, function(response){
+           console.log(response);
+           if(response.error){ reject(new Error(response.error.error_msg))
+            } else {
+                let source = playerItemTemplate.innerHTML;
+                let templateFn = Handlebars.compile(source);
+                let template = templateFn({list: response.response.items});
+                console.log(template)
+                let result = document.querySelector('.result');
+                console.log(result)
+                result.innerHTML = template;
+            };
+           
+       })
+   })});
        
 
     

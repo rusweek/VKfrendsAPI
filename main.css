@@ -1,0 +1,30 @@
+.mr-3 {
+	border-radius: 10px;
+    overflow: hidden;
+    
+}
+
+.media {
+    min-height: 200px;
+	margin: 20px 5px;
+    background-color: rgba(202, 232, 239, 0.62);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(14, 62, 58, 0.93);
+    transition: background-color 0.3s;
+}
+.media:hover{
+    background-color: rgba(34, 160, 112, 0.74);
+}
+
+.headerInfo {
+    font-size:  24px;
+    margin: 10px auto;
+    max-width: 960px;
+    text-align: center;
+    display: block;
+    box-shadow: 0 0 20px rgba(0,0,0,.5);
+    
+    
+}
+
+
